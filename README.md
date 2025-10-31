@@ -4,7 +4,7 @@
 
 This extension allows you to dynamically create a multi-column editor layout in Visual Studio Code. Whether you're comparing files, working on a multi-file module, or just love organized screen space, **Split Tabs** helps you set up your ideal workspace in seconds.
 
-![Demo](https://github.com/cemtopkaya/split-tabs/raw/main/demo.gif)  
+![Demo](https://github.com/cemtopkaya/split-tabs/raw/master/demo.gif)  
 _(Replace with actual demo later)_
 
 ## ✨ Features
