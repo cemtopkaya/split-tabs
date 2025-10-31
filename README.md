@@ -9,7 +9,7 @@ _(Replace with actual demo later)_
 
 ## ✨ Features
 
-- Prompt for the number of editor groups (2 to 100).
+- Prompt for the number of editor groups.
 - Automatically splits the editor to the right and moves tabs into new groups.
 - Returns focus to the first editor group when done.
 - Works globally — no project configuration needed.

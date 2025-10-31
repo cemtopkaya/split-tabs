@@ -1,13 +1,21 @@
 import * as vscode from 'vscode';
 
+export function countOpenTabs() {
+    const tabGroups = vscode.window.tabGroups.all;
+    const tabs = tabGroups.flatMap(g => g.tabs);
+    vscode.window.showInformationMessage(`Toplam ${tabs.length} tab açık.`);
+    return tabs.length;
+}
+
 export function activate(context: vscode.ExtensionContext) {
     const disposable = vscode.commands.registerCommand('split-tabs.vertical', async () => {
+        const maxTabCount = countOpenTabs()
         const result = await vscode.window.showInputBox({
-            prompt: 'How many editor groups would you like to create? (2–100)',
+            prompt: `How many editor groups would you like to create? (2–${maxTabCount})`,
             placeHolder: 'e.g., 3',
             validateInput: (text) => {
                 const n = parseInt(text, 10);
-                if (isNaN(n) || n < 2 || n > 100) {
+                if (isNaN(n) || n < 2 || n > maxTabCount) {
                     return 'Please enter a number between 2 and 100.';
                 }
                 return null;
@@ -37,4 +45,4 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(disposable);
 }
 
-export function deactivate() {}
+export function deactivate() { }
